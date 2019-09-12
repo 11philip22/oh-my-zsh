@@ -1,69 +1,99 @@
-#written by Philip Woldhek
-export ZSH="/home/philip/.oh-my-zsh"
-export VISUAL=vim
-export EDITOR="$VISUAL"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-ZSH_THEME="junkfood"
-plugins=(git extract)
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
 source $ZSH/oh-my-zsh.sh
 
-##########functions######################
-function headset() {
-    if echo -e "info" | bluetoothctl | grep Missing; then
-        echo -e "power on" | bluetoothctl
-        sleep 1
-        echo -e "connect A0:E6:F8:18:DD:F5" | bluetoothctl
-    else
-        echo -e "power off" | bluetoothctl
-    fi
-}
+# User configuration
 
-export headset
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# kubectl autocompletion #########################################
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-if [ -f /usr/bin/kubectl ]; then
-    source <(kubectl completion zsh);
-fi
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-##########aliases##########
-alias agenda='gcalcli calm'
-alias todo='gcalcli agenda'
-alias Ro='sudo pacman -Rscn $(pacman -Qtdq)'
-alias rschool='ranger ~/school'
-alias rscripts='ranger ~/scripts'
-alias rpics='ranger ~/pics'
-alias rphone='ranger ~/phone'
-alias rshare='ranger ~/share-map'
-alias rmount='ranger /mnt'
-alias mkdir='mkdir -pv'
-alias c='clear'
-alias dockerclean='sudo docker rm -f $(sudo docker ps -a -q) && sudo docker rmi -f $(sudo docker images -q)'
-alias sudo='sudo '
-alias warpnet='cd /home/philip/school/stage-warpnet'
-alias school='cd /home/philip/school/school'
-alias scripts='cd /home/philip/scripts'
-alias downloads='cd /home/philip/Downloads'
-alias r='ranger'
-alias mnt='cd /mnt'
-alias share='cd /home/philip/share-map'
-alias rdwm='ranger /home/philip/.config/dwm'
-alias gdwm='cd /home/philip/.config/dwm'
-alias m='sudo bash /home/philip/scripts/dmenumount.sh'
-alias github='cd /home/philip/share-map/github'
-alias 3tb='cd /srv/sto3'
-alias raid='cd /srv/sto1'
-alias 4tb='cd /srv/sto2'
-alias nano='vim'
-alias mktar='tar -czvf'
-alias sto1='cd /srv/sto1'
-alias sto2='cd /srv/sto2'
-alias sto3='cd /srv/sto4'
-alias sto4='cd /srv/sto5'
-alias deluxe='cd /srv/sto2/scripts'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias liah='ls -liah'
-alias pull='git pull origin master'
-alias code='codium'
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
