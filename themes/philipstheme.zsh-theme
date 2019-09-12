@@ -1,4 +1,5 @@
 # Totally ripped off Dallas theme
+## Totally ripped off Junkfood theme
 
 # Grab the current machine name
 JUNKFOOD_MACHINE_="%{$fg_bold[red]%}%m%{$fg[white]%}%{$reset_color%} "
