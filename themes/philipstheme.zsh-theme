@@ -1,22 +1,17 @@
-
 # Totally ripped off Dallas theme
-## Totally ripped off Junkfood theme
-
-# Grab the current date (%W) and time (%t):
-#JUNKFOOD_TIME_="%{$fg_bold[red]%}#%{$fg_bold[white]%}( %{$fg_bold[yellow]%}%W%{$reset_color%}@%{$fg_bold[white]%}%t )( %{$reset_color%}"
 
 # Grab the current machine name
 JUNKFOOD_MACHINE_="%{$fg_bold[red]%}%m%{$fg[white]%}%{$reset_color%} "
 
 # Grab the current username
-JUNKFOOD_CURRENT_USER_="%{$fg_bold[red]%}%n%{$reset_color%}"
+JUNKFOOD_CURRENT_USER_="%{$fg_bold[red]%}%n%{$fg_bold[green]%}"
 
 # Grab the current filepath, use shortcuts: ~/Desktop
 # Append the current git branch, if in a git repository: ~aw@master
-JUNKFOOD_LOCA_="%{$fg_bold[red]%}%~\$(git_prompt_info)%{$reset_color%}"
+JUNKFOOD_LOCA_="%{$fg_bold[red]%}%~ \$(git_prompt_info)%{$reset_color%}"
 
 # For the git prompt, use a white @ and blue text for the branch name
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}@%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}@%{$fg_bold[red]%}"
 
 # Close it all off by resetting the color and styles.
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -28,5 +23,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✗✗✗"
 
 # Put it all together!
-PROMPT="$JUNKFOOD_TIME_$JUNKFOOD_CURRENT_USER_%{$fg_bold[green]%}@$JUNKFOOD_MACHINE_$JUNKFOOD_LOCA_
+PROMPT="$JUNKFOOD_CURRENT_USER_@$JUNKFOOD_MACHINE_$JUNKFOOD_LOCA_
 "
